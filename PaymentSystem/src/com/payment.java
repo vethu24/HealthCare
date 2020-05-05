@@ -38,7 +38,7 @@ public class payment {
 			output = "<table border='1'><tr><th>Card HolderName</th>"
 					+ "<th>Card Type</th><th>Card Number</th>"
 					+ "<th>CVV</th><th>Expire Month</th><th>Expire Year</th>"
-					+ "<th>Total</th><th>Pay Date</th>"
+					+ "<th>Total</th>"
 					+ "<th>Update</th><th>Remove</th></tr>";
 			
 			String query = "select * from payment";
@@ -54,7 +54,6 @@ public class payment {
 				String expMonth = rs.getString("expMonth");
 				String expYear = rs.getString("expYear");
 				String total = rs.getString("total");
-				String payDate = rs.getString("payDate");
 				// Add into the html table
 				
 				
@@ -67,7 +66,6 @@ public class payment {
 				output += "<td>" + expMonth + "</td>";
 				output += "<td>" + expYear + "</td>";
 				output += "<td>" + total + "</td>";
-				output += "<td>" + payDate + "</td>";
 				// buttons
 				output += "<td><input name='btnUpdate' type='button' value='Update' class='btnUpdate btn btn-secondary'></td><td><input name='btnRemove' type='button' value='Remove' class='btnRemove btn btn-danger' data-cardpayid='"+cardpayID+"'></td></tr>";
 				
